@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import App from "./ChathGenerator/App";
-import VoicePrompt from "./VoicePrompt/voicePrompt";
+import VoicePrompt from "./VoicePrompt/VoicePrompt";
 import ImageGenerator from "./ImageGenerator/ImageGenerator";
 
 const Root = () => {
