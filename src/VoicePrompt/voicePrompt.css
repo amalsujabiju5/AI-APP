@@ -1,0 +1,783 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow: hidden;
+}
+
+body {
+  background: radial-gradient(
+    circle,
+    rgba(33, 37, 41, 1) 0%,
+    rgba(17, 17, 17, 1) 100%
+  );
+  color: white;
+  font-family: "Poppins", "sans-serif";
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+}
+
+.sidebar {
+  flex: 2;
+  border-right: 1px solid rgb(100, 100, 100);
+  height: 100vh;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.main {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem; /* Adjust to match sidebar width if needed */
+  margin-right: 2rem;
+}
+
+.logo {
+  margin-right: 1rem;
+}
+
+.brand {
+  font-size: 2rem;
+}
+
+.upperpart {
+  padding: 2.5rem;
+  border-bottom: 1px solid rgb(100, 100, 100);
+  height: 70%;
+}
+
+.uppersideTop {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.midBtn {
+  background: rgb(59, 62, 71);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  width: 25rem;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+  transform: 0.1s;
+}
+
+.midBtn:hover {
+  background: #646e70;
+}
+
+.addBtn {
+  height: 2rem;
+  padding-right: 1rem;
+}
+
+.upperSideBottom {
+  padding-top: 15rem;
+}
+
+.lowerpart {
+  padding: 2rem;
+}
+
+.listItem {
+  margin: 1.5rem;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.listItem:hover {
+  background: rgba(98, 98, 98, 1);
+  border-radius: 8px;
+}
+
+.listItemImg {
+  padding-right: 1rem;
+  margin: 1rem;
+  width: 10%;
+}
+
+.listItemImg:nth-child(1) > .listItemImg {
+  margin-right: 0.5rem;
+}
+
+.listItemImg:nth-child(3) > .listItemImg {
+  margin-right: 0.75rem;
+}
+
+.messages {
+  overflow-y: auto; /* Allow vertical scrolling */
+  height: calc(100vh - 20rem); /* Adjust based on header/footer height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.messages::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.messages {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.chat {
+  margin: 1rem;
+  padding: 2rem 3rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  text-align: justify;
+}
+
+.chatImg {
+  object-fit: cover;
+  width: 3.5rem;
+  margin-right: 1rem;
+  border-radius: 1.5rem;
+}
+
+.user {
+  background: linear-gradient(
+    135deg,
+    rgb(110, 116, 126) 0%,
+    rgb(47, 54, 63) 100%
+  );
+  width: fit-content;
+  max-width: 55%;
+  height: fit-content;
+  border-radius: 1.5rem;
+  margin-left: auto;
+  text-align: justify;
+}
+
+.bot {
+  background: linear-gradient(135deg, rgb(45, 47, 47) 0%, rgb(65, 69, 69) 100%);
+  width: fit-content;
+  max-width: 55%;
+  text-align: justify;
+  border-radius: 3rem;
+  margin-right: auto;
+
+  text-align: justify;
+}
+.footer {
+  margin-bottom: 30px;
+  padding-top: 48px;
+  border-top: 1px solid #2f3031;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(
+    circle,
+    rgba(33, 37, 41, 1) 0%,
+    rgba(17, 17, 17, 1) 100%
+  );
+}
+
+.inp {
+  padding: 0.5rem;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items to start */
+  border-radius: 0.5rem;
+  width: 55%;
+  max-width: 100%;
+  position: relative;
+}
+
+.inpInput {
+  padding: 1rem;
+  background: radial-gradient(
+    circle,
+    rgba(33, 37, 41, 1) 0%,
+    rgba(17, 17, 17, 1) 100%
+  );
+  border: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 85%; /* Adjust width to give space for the button */
+  height: auto;
+  min-height: 38px;
+  max-height: 200px;
+  overflow-y: auto;
+  resize: none;
+  color: white;
+  outline: none;
+  font-size: 1.6rem;
+  display: block;
+  position: relative; /* Changed to relative */
+  transform-origin: bottom;
+}
+.send {
+  background-color: transparent; /* Make the send button background transparent */
+  border: none; /* Remove any border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem; /* Adds spacing between text area and button */
+  padding: 0; /* Remove padding around the button itself */
+}
+
+.mic {
+  background-color: transparent; /* Ensure the inside of the circle is transparent */
+  border: 2px solid rgb(238, 14, 14); /* Red border for the circle */
+  border-radius: 50%;
+  padding: 1rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+}
+
+.mic > img {
+  width: 2rem; /* Adjust the mic image width */
+  height: 2rem; /* Adjust the mic image height */
+}
+
+.mic:hover {
+  transform: scale(1.1); /* Enlarge the mic image on hover */
+  transition: 0.2s; /* Smooth transition effect */
+}
+
+.warning {
+  margin: 2rem 0;
+}
+
+@keyframes twinkle {
+  0% {
+    box-shadow: 0 0 0 rgba(238, 14, 14, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 10px 5px rgba(238, 14, 14, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(238, 14, 14, 0.5);
+  }
+}
+
+.play {
+  background-color: transparent;
+  border: 2px solid rgb(238, 14, 14);
+  border-radius: 50%;
+  padding: 1rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+  transition: transform 0.2s; /* Smooth transition for scaling */
+  animation: twinkle 1s infinite; /* Apply the twinkle animation on hover */
+  transform: scale(1.1); /* Enlarge the mic button on hover */
+}
+.smallScreen {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Align items vertically within the height */
+  position: absolute; /* Position it relative to the viewport */
+  top: 0; /* Stick to the top of the page */
+  left: 50%; /* Align the left edge of the container to the center */
+  transform: translateX(-50%); /* Correct horizontal centering */
+  width: 100%; /* Full width */
+  height: 60px; /* Adjust height to make it like a navbar */
+}
+
+.smallScreenItems {
+  display: flex;
+  align-items: center; /* Align items vertically in the same line */
+  gap: 10px; /* Space between the button and the image */
+  background: #2f3031;
+  border: none;
+  padding: 8px 12px 8px 12px;
+  border-radius: 15px;
+  opacity: 0;
+}
+.uppersideTop1 {
+  display: flex;
+  align-items: right;
+  margin-top: 4rem;
+  opacity: 0;
+}
+.brand1 {
+  font-size: 2rem;
+}
+.logo1 {
+  margin-right: 1rem;
+}
+button {
+  padding: 0;
+  font-size: 16px; /* Set font size */
+  background: none; /* Remove background color */
+  border: none; /* Remove border */
+  color: inherit; /* Inherit the text color from the parent */
+  font-family: inherit; /* Inherit the font style from the parent */
+  cursor: pointer; /* Keep the cursor pointer for interactivity */
+}
+
+button:focus {
+  outline: none; /* Remove focus outline when clicked */
+}
+
+img {
+  width: 20px; /* Adjust the image size as needed */
+  height: auto;
+  margin: 0; /* Remove default margin */
+}
+
+.navigators {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 85px;
+  right: 600px;
+  background: #2f3031;
+  border-radius: 12px;
+  width: 20%;
+  padding: 40px;
+  transform: translateY(-20px); /* Start slightly above */
+  opacity: 0; /* Initially hidden */
+  transition: 0.3s ease-out;
+}
+
+.navigators.show {
+  opacity: 0; /* Fully visible */
+}
+
+.navigator:hover {
+  background-color: #42464c;
+  border-radius: 12px;
+}
+
+.navigator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding-top: 15px;
+}
+
+.navigator img {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px; /* Ensure height is the same as width for a perfect circle */
+  object-fit: cover;
+  background-color: #2f3031;
+}
+
+.span {
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+/* For devices with a max width of 768px (e.g., tablets) */
+@media screen and (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex: 1;
+    height: auto; /* Adjust the sidebar height */
+    border-right: none;
+    border-bottom: 1px solid rgb(100, 100, 100);
+  }
+
+  .main {
+    margin-left: 1rem; /* Reduced margin for smaller screens */
+    margin-right: 1rem;
+    padding: 1.5rem;
+  }
+
+  .brand {
+    font-size: 1.8rem;
+  }
+
+  .midBtn {
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+
+  .listItem {
+    font-size: 1.2rem;
+    margin: 1rem;
+  }
+
+  .messages {
+    height: calc(100vh - 15rem); /* Adjust message container height */
+  }
+
+  .footer {
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .inp {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .inpInput {
+    max-width: 85%;
+    font-size: 1.4rem;
+  }
+
+  .send img {
+    width: 1.5rem;
+  }
+
+  .mic img {
+    width: 1.5rem;
+  }
+
+  .chat {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .chatImg {
+    width: 3rem;
+  }
+
+  .smallScreen {
+    height: 50px;
+  }
+
+  .smallScreenItems {
+    gap: 5px;
+  }
+
+  .navigators {
+    right: 30px;
+    width: 60%;
+  }
+}
+
+/* For devices with a max width of 480px (e.g., smartphones) */
+@media screen and (max-width: 480px) {
+  .sidebar {
+    display: none; /* Hide sidebar on small screens */
+  }
+
+  .main {
+    margin-left: 0; /* Remove margins for small screens */
+    margin-right: 0; /* Remove margins for small screens */
+  }
+
+  .midBtn {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  .listItem {
+    font-size: 1rem;
+    margin: 0.8rem;
+  }
+
+  .smallScreen {
+    scroll-behavior: smooth;
+    top: 0;
+    width: 100%;
+    z-index: 999; /* Ensure the navbar is always on top */
+  }
+  .messages {
+    overflow-y: auto;
+    height: calc(100vh - 22rem); /* Adjust height for smaller screens */
+    display: flex;
+    flex-direction: column;
+    margin-top: 8rem;
+  }
+
+  .chat {
+    padding: 1.5rem; /* Reduce padding for chat */
+    margin: 1.4rem; /* Adjust margin for chat */
+  }
+
+  .chatImg {
+    width: 2.5rem; /* Reduce chat image size */
+  }
+
+  .user {
+    background: linear-gradient(
+      135deg,
+      rgb(110, 116, 126) 0%,
+      rgb(47, 54, 63) 100%
+    );
+    max-width: 90%; /* Increase max-width for smaller screens */
+    margin-left: auto; /* Keep user messages on the right */
+    margin-right: 2; /* Reset margin-right for mobile */
+    font-size: 1.8rem; /* Adjust font size */
+    color: black;
+    font-size: 1.8rem;
+    text-align: justify;
+    font-weight: normal;
+  }
+
+  .bot {
+    background: linear-gradient(
+      135deg,
+      rgb(45, 47, 47) 0%,
+      rgb(65, 69, 69) 100%
+    );
+
+    max-width: 90%; /* Increase max-width for smaller screens */
+    margin-right: auto; /* Keep bot messages on the left */
+    margin-left: 2; /* Reset margin-left for mobile */
+    font-size: 1.8rem; /* Adjust font size */
+    border-radius: 1.5rem; /* Add border-radius for rounded corners */
+    padding: 0.5rem 1rem; /* Add padding for better touch targets */
+    text-align: justify;
+  }
+
+  .footer {
+    margin-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .inp {
+    padding: 0.5rem; /* Adequate padding for touch */
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px; /* More rounded corners for a modern look */
+    width: 90%; /* Use more of the available width */
+    max-width: 100%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); /* Shadow for emphasis */
+  }
+
+  .inpInput {
+    padding: 1rem; /* Enough padding for comfortable input */
+    background: rgba(50, 50, 50, 0.8); /* Darker background for visibility */
+    border: none;
+    border-radius: 25px; /* Match the input field's rounded corners */
+    width: 100%;
+    height: auto;
+    min-height: 45px; /* Sufficient height for touch interaction */
+    max-height: 150px; /* Set a max height for overflow */
+    overflow-y: auto; /* Allow scrolling if text exceeds max height */
+    resize: none; /* Disable resizing */
+    color: white; /* Text color for contrast */
+    outline: none; /* No outline on focus */
+    font-size: 1.8rem; /* Comfortable font size */
+    transition: background 0.3s; /* Smooth background transition */
+    text-align: justify;
+  }
+
+  .inpInput:focus {
+    background: rgba(76, 66, 66, 0.2); /* Change background on focus */
+  }
+
+  .send {
+    border: none;
+    cursor: pointer;
+    color: white; /* Text color for visibility */
+    padding: 0.5rem 1rem; /* Sufficient padding */
+    border-radius: 25px; /* Rounded corners */
+    transition: background 0.3s ease; /* Smooth transition */
+  }
+
+  .showError {
+    color: #e0dccf; /* Bright warning color for visibility */
+    text-align: center;
+    margin-top: 0.5rem; /* Slightly reduced margin */
+    font-size: 1rem; /* Clear font size */
+
+    padding: 0.5rem; /* Padding for spacing */
+  }
+  .send {
+    background-color: transparent; /* Make the send button background transparent */
+    border: none; /* Remove any border */
+    display: flex;
+    align-items: center;
+    width: 3rem; /* Increase button width */
+    height: 3rem; /* Increase button height */
+
+    justify-content: center;
+    margin-right: 2rem; /* Adds spacing between text area and button */
+    padding: 0; /* Remove padding around the button itself */
+  }
+
+  .mic {
+    background-color: transparent; /* Ensure the inside of the circle is transparent */
+    border: 2px solid rgb(238, 14, 14); /* Red border for the circle */
+    border-radius: 50%;
+    padding: 1rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+  }
+
+  .mic > img {
+    width: 20px; /* Adjust the mic image width */
+    height: auto; /* Adjust the mic image height */
+  }
+
+  .mic:hover {
+    transform: scale(1.1); /* Enlarge the mic image on hover */
+    transition: 0.2s; /* Smooth transition effect */
+  }
+
+  .chatImg {
+    width: 2.5rem;
+  }
+
+  .navigators {
+    width: 80%;
+    right: 28px;
+  }
+  .smallScreen {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999; /* Ensure the navbar is always on top */
+  }
+  .smallScreenItems {
+    opacity: 1;
+  }
+  .uppersideTop1 {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin: 10px;
+    opacity: 1;
+  }
+  .brand1 {
+    font-size: 1.6rem;
+  }
+  .logo1 {
+    margin-right: 1rem;
+    width: 25px; /* Set your desired width */
+    height: 25px; /* Set your desired height */
+    object-fit: cover; /* Maintain aspect ratio and cover the element */
+  }
+  .navigators.show {
+    opacity: 1; /* Fully visible */
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .sidebar {
+    display: none;
+  }
+
+  .smallScreenItems {
+    height: 50px;
+    opacity: 1;
+  }
+  .uppersideTop1 {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin: 20px;
+    opacity: 1;
+  }
+  .brand1 {
+    font-size: 1.4rem;
+    margin-right: -20px;
+  }
+  .logo1 {
+    margin-right: 1rem;
+  }
+
+  .navigators {
+    right: 190px;
+    padding: 20px;
+    width: 50%;
+    height: fit-content;
+  }
+
+  .navigators.show {
+    opacity: 1;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh -15; /* Full height of the viewport */
+    padding-top: 5rem;
+  }
+
+  .footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .inp {
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 100%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .inpInput {
+    padding: 1rem;
+    background: rgba(50, 50, 50, 0.8);
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    height: auto;
+    min-height: 45px;
+    max-height: 150px;
+    overflow-y: auto;
+    resize: none;
+    color: white;
+    font-size: 1.8rem;
+    transition: background 0.3s;
+  }
+
+  .inpInput:focus {
+    background: rgba(76, 66, 66, 0.2);
+  }
+
+  .send {
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+  }
+
+  .warning {
+    color: #e0dccf;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+  } /* Hide scrollbar styles */
+}

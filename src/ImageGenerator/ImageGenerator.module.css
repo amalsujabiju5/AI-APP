@@ -1,0 +1,731 @@
+/* Hide scrollbar styles */
+.sidebar,
+.messages {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.sidebar::-webkit-scrollbar,
+.messages::-webkit-scrollbar {
+  display: none; /* Hides scrollbar for Webkit browsers */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: radial-gradient(
+    circle,
+    rgba(33, 37, 41, 1) 0%,
+    rgba(17, 17, 17, 1) 100%
+  );
+  color: white;
+  font-family: "Poppins", "sans-serif";
+  overflow: auto;
+}
+.app {
+  display: flex;
+  flex: 1;
+  background: radial-gradient(
+    circle,
+    rgba(33, 37, 41, 1) 0%,
+    rgba(17, 17, 17, 1) 100%
+  );
+  overflow: hidden;
+}
+.sidebar {
+  flex: 2;
+  border-right: 1px solid rgb(100, 100, 100);
+  height: 100vh;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.main {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem; /* Adjust to match sidebar width if needed */
+  overflow: hidden;
+}
+
+.logo {
+  margin-right: 1rem;
+}
+
+.brand {
+  font-size: 2rem;
+}
+
+.upperpart {
+  padding: 2.5rem;
+  border-bottom: 1px solid rgb(100, 100, 100);
+  height: 70%;
+}
+
+.uppersideTop {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.brand1 {
+  font-size: 2rem;
+}
+.logo1 {
+  margin-right: 1rem;
+}
+.midBtn {
+  background: rgb(59, 62, 71);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  width: 25rem;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+  transform: 0.1s;
+}
+
+.midBtn:hover {
+  background: #646e70;
+}
+
+.addBtn {
+  height: 2rem;
+  padding-right: 1rem;
+}
+
+.upperSideBottom {
+  padding-top: 15rem;
+}
+
+.lowerpart {
+  padding: 2rem;
+}
+
+.listItem {
+  margin: 1.5rem;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.listItem:hover {
+  background: rgba(98, 98, 98, 1);
+}
+
+.listItemImg {
+  padding-right: 1rem;
+  margin: 1rem;
+  width: 10%;
+}
+
+.listItemImg:nth-child(1) > .listItemImg {
+  margin-right: 0.5rem;
+}
+
+.listItemImg:nth-child(3) > .listItemImg {
+  margin-right: 0.75rem;
+}
+
+.messages {
+  overflow-y: auto; /* Allow vertical scrolling */
+  height: calc(100vh - 20rem); /* Adjust based on header/footer height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.messages::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.messages {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.chat {
+  margin: 1rem;
+  padding: 2rem 3rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.chatImg {
+  object-fit: cover;
+  width: 3.2rem;
+  margin-right: 1rem;
+  border-radius: 1.5rem;
+}
+.AI {
+  object-fit: cover;
+  width: 35.5rem;
+  height: 35.5rem;
+  border-radius: 1.5rem;
+}
+
+.user {
+  background: rgba(57, 66, 75, 0.8);
+  width: fit-content;
+  max-width: 55%;
+  height: fit-content;
+  border-radius: 1.5rem;
+  margin-left: auto;
+  text-align: justify;
+  margin-top: 40px;
+}
+
+.bot {
+  background: rgba(28, 30, 58, 1);
+  width: fit-content;
+  max-width: 55%;
+  text-align: justify;
+  border-radius: 3rem;
+  margin-right: auto;
+
+  text-align: justify;
+}
+.footer {
+  margin-top: 5px;
+  padding-top: 48px;
+  border-top: 1px solid #2f3031;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(
+    circle,
+    rgba(33, 37, 41, 1) 0%,
+    rgba(17, 17, 17, 1) 100%
+  );
+}
+
+.inp {
+  padding: 0.5rem;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items to start */
+  border-radius: 0.5rem;
+  width: 55%;
+  max-width: 100%;
+  position: relative;
+}
+
+.inpInput {
+  padding: 1rem;
+  background: radial-gradient(
+    circle,
+    rgba(33, 37, 41, 1) 0%,
+    rgba(17, 17, 17, 1) 100%
+  );
+  border: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 85%; /* Adjust width to give space for the button */
+  height: auto;
+  min-height: 38px;
+  max-height: 200px;
+  overflow-y: auto;
+  resize: none;
+  color: white;
+  outline: none;
+  font-size: 1.6rem;
+  display: block;
+  position: relative; /* Changed to relative */
+  transform-origin: bottom;
+}
+.send {
+  background-color: transparent; /* Make the send button background transparent */
+  border: none; /* Remove any border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem; /* Adds spacing between text area and button */
+  padding: 0; /* Remove padding around the button itself */
+}
+
+.warning {
+  margin: 2rem 0;
+}
+
+.showError {
+  display: block;
+  justify-content: center;
+  align-items: center;
+
+  color: #cd091d; /* Dark red text */
+
+  padding: 3px 10px; /* Padding for the content */
+  margin: 20px auto; /* Center with margin */
+  width: fit-content;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+}
+
+.showError p {
+  margin: 1;
+  text-align: center; /* Center text */
+}
+.smallScreen {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Align items vertically within the height */
+  position: absolute; /* Position it relative to the viewport */
+  top: 0; /* Stick to the top of the page */
+  left: 60%; /* Align the left edge of the container to the center */
+  transform: translateX(-50%); /* Correct horizontal centering */
+  width: 100%; /* Full width */
+  height: 60px; /* Adjust height to make it like a navbar */
+  gap: 80px;
+}
+
+.smallScreenItems {
+  display: flex;
+  align-items: center; /* Align items vertically in the same line */
+  gap: 10px; /* Space between the button and the image */
+  background: #2f3031;
+  border: none;
+  padding: 8px 12px 8px 12px;
+  border-radius: 15px;
+  opacity: 0;
+}
+.uppersideTop1 {
+  display: flex;
+  align-items: right;
+  margin-top: 2rem;
+  opacity: 0;
+}
+button {
+  padding: 0;
+  font-size: 16px; /* Set font size */
+  background: none; /* Remove background color */
+  border: none; /* Remove border */
+  color: inherit; /* Inherit the text color from the parent */
+  font-family: inherit; /* Inherit the font style from the parent */
+  cursor: pointer; /* Keep the cursor pointer for interactivity */
+}
+
+button:focus {
+  outline: none; /* Remove focus outline when clicked */
+}
+
+img {
+  width: 20px; /* Adjust the image size as needed */
+  height: auto;
+  margin: 0; /* Remove default margin */
+}
+
+.navigators {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 85px;
+  right: 600px;
+  background: #2f3031;
+  border-radius: 12px;
+  width: 20%;
+  padding: 40px;
+  transform: translateY(-20px); /* Start slightly above */
+  opacity: 0; /* Initially hidden */
+  transition: 0.3s ease-out;
+}
+
+.navigators.show {
+  opacity: 1; /* Fully visible */
+}
+
+.navigator:hover {
+  background-color: #42464c;
+  border-radius: 12px;
+}
+
+.navigator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding-top: 15px;
+}
+
+.navigator img {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px; /* Ensure height is the same as width for a perfect circle */
+  object-fit: cover;
+  background-color: #2f3031;
+}
+
+.span {
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+/* Small Screen Specific Styles for Image Generator Page */
+@media screen and (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    min-height: 100vh; /* Full height of the viewport */
+    overflow: hidden;
+  }
+
+  .app {
+    flex-direction: column; /* Stack sidebar and main vertically */
+    overflow: hidden;
+  }
+
+  .sidebar {
+    flex: 1; /* Hide sidebar on smaller screens */
+    display: none; /* Ensure it does not show on small screens */
+  }
+
+  .main {
+    margin-left: 0; /* Remove margins for small screens */
+    margin-right: 0; /* Remove margins for small screens */
+  }
+  .logo {
+    font-size: 1.8rem; /* Adjust logo size for smaller screens */
+  }
+
+  .brand {
+    font-size: 1.6rem; /* Adjust brand size */
+  }
+
+  .midBtn {
+    width: 100%; /* Make button full width */
+    font-size: 1.4rem; /* Adjust font size */
+    padding: 1rem; /* Ensure sufficient padding */
+  }
+
+  .messages {
+    overflow-y: hidden;
+    height: calc(100vh - 10rem); /* Adjust height for smaller screens */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user {
+    margin-left: auto; /* Keep user messages on the right */
+    margin-right: 1; /* Reset margin-right for mobile */
+    margin-top: 80px;
+    font-size: 1.5rem;
+  }
+
+  .bot {
+    margin-right: auto; /* Keep bot messages on the left */
+    margin-left: 0; /* Reset margin-left for mobile */
+  }
+  .footer {
+    margin-bottom: 1px; /* Keep margin minimal */
+    padding-top: 48px;
+    padding: 1rem; /* Increased padding for better spacing */
+    border-top: 1px solid #2f3031; /* Keeping a clean top border */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1e1e1e; /* Dark background for contrast */
+    position: relative;
+    max-height: 70%; /* Reduced max height */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+  }
+  .inp {
+    padding: 0.5rem; /* Adequate padding for touch */
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px; /* More rounded corners for a modern look */
+    width: 90%; /* Use more of the available width */
+    max-width: 100%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); /* Shadow for emphasis */
+  }
+
+  .inpInput {
+    padding: 1rem; /* Enough padding for comfortable input */
+    background: rgba(50, 50, 50, 0.8); /* Darker background for visibility */
+    border: none;
+    border-radius: 25px; /* Match the input field's rounded corners */
+    width: 100%;
+    height: auto;
+    min-height: 45px; /* Sufficient height for touch interaction */
+    max-height: 150px; /* Set a max height for overflow */
+    overflow-y: auto; /* Allow scrolling if text exceeds max height */
+    resize: none; /* Disable resizing */
+    color: white; /* Text color for contrast */
+    outline: none; /* No outline on focus */
+    font-size: 1.2rem; /* Comfortable font size */
+    transition: background 0.3s; /* Smooth background transition */
+  }
+
+  .inpInput:focus {
+    background: rgba(76, 66, 66, 0.2); /* Change background on focus */
+  }
+
+  .send {
+    border: none;
+    cursor: pointer;
+    color: white; /* Text color for visibility */
+    padding: 0.5rem 1rem; /* Sufficient padding */
+    border-radius: 25px; /* Rounded corners */
+    transition: background 0.3s ease; /* Smooth transition */
+  }
+
+  .showError {
+    color: #e0dccf; /* Bright warning color for visibility */
+    text-align: center;
+    margin-top: 0.5rem; /* Slightly reduced margin */
+    font-size: 1rem; /* Clear font size */
+
+    padding: 0.5rem; /* Padding for spacing */
+  }
+  .smallScreen {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999; /* Ensure the navbar is always on top */
+  }
+  .smallScreenItems {
+    opacity: 1;
+  }
+  .uppersideTop1 {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin: 10px;
+    opacity: 1;
+  }
+  .brand1 {
+    font-size: 1.6rem;
+  }
+  .logo1 {
+    margin-right: 1rem;
+    width: 25px; /* Set your desired width */
+    height: 25px; /* Set your desired height */
+    object-fit: cover; /* Maintain aspect ratio and cover the element */
+  }
+
+  .smallScreen {
+    height: 60px; /* Adjust height for the small screen navbar */
+    opacity: 1;
+  }
+
+  .navigators {
+    right: 45px; /* Adjust position for small screens */
+    padding: 20px; /* Reduce padding */
+    width: 80%;
+    height: fit-content;
+  }
+
+  .navigators.show {
+    opacity: 1;
+  }
+
+  .smallScreenItems {
+    display: flex;
+    align-items: center; /* Align items vertically in the same line */
+    gap: 10px; /* Space between the button and the image */
+    background: #2f3031;
+    border: none;
+    padding: 4px 8px 4px 8px;
+    border-radius: 15px;
+  }
+  img {
+    width: 20px; /* Adjust the image size as needed */
+    height: auto;
+    margin: 0; /* Remove default margin */
+  }
+}
+
+/* Even smaller screens (e.g., mobile devices) */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 50%; /* Further decrease font size */
+  }
+
+  .midBtn {
+    font-size: 1.2rem; /* Smaller button font */
+    padding: 0.8rem; /* Adjust padding */
+  }
+  .footer {
+    margin-bottom: 1px; /* Keep margin minimal */
+    padding-top: 48px;
+    padding: 1rem; /* Increased padding for better spacing */
+    border-top: 1px solid #2f3031; /* Keeping a clean top border */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1e1e1e; /* Dark background for contrast */
+    position: relative;
+    max-height: 70%; /* Reduced max height */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+  }
+  .inp {
+    padding: 0.5rem; /* Adequate padding for touch */
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px; /* More rounded corners for a modern look */
+    width: 90%; /* Use more of the available width */
+    max-width: 100%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); /* Shadow for emphasis */
+  }
+
+  .inpInput {
+    padding: 1rem; /* Enough padding for comfortable input */
+    background: rgba(50, 50, 50, 0.8); /* Darker background for visibility */
+    border: none;
+    border-radius: 25px; /* Match the input field's rounded corners */
+    width: 100%;
+    height: auto;
+    min-height: 45px; /* Sufficient height for touch interaction */
+    max-height: 150px; /* Set a max height for overflow */
+    overflow-y: auto; /* Allow scrolling if text exceeds max height */
+    resize: none; /* Disable resizing */
+    color: white; /* Text color for contrast */
+    outline: none; /* No outline on focus */
+    font-size: 1.8rem; /* Comfortable font size */
+    transition: background 0.3s; /* Smooth background transition */
+    text-align: justify;
+  }
+
+  .inpInput:focus {
+    background: rgba(76, 66, 66, 0.2); /* Change background on focus */
+  }
+
+  .send {
+    border: none;
+    cursor: pointer;
+    color: white; /* Text color for visibility */
+    padding: 0.5rem 1rem; /* Sufficient padding */
+    border-radius: 25px; /* Rounded corners */
+    transition: background 0.3s ease; /* Smooth transition */
+  }
+
+  .showError {
+    color: #e0dccf; /* Bright warning color for visibility */
+    text-align: center;
+    margin-top: 0.5rem; /* Slightly reduced margin */
+    font-size: 1rem; /* Clear font size */
+
+    padding: 0.5rem; /* Padding for spacing */
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .sidebar {
+    display: none;
+  }
+
+  .smallScreenItems {
+    height: 50px;
+    opacity: 1;
+  }
+  .uppersideTop1 {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin: 20px;
+    opacity: 1;
+  }
+  .brand1 {
+    font-size: 1.4rem;
+    margin-right: -20px;
+  }
+  .logo1 {
+    margin-right: 1rem;
+  }
+
+  .navigators {
+    right: 190px;
+    padding: 20px;
+    width: 50%;
+    height: fit-content;
+  }
+
+  .navigators.show {
+    opacity: 1;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh -15; /* Full height of the viewport */
+    padding-top: 5rem;
+  }
+
+  .footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .inp {
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 100%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .inpInput {
+    padding: 1rem;
+    background: rgba(50, 50, 50, 0.8);
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    height: auto;
+    min-height: 45px;
+    max-height: 150px;
+    overflow-y: auto;
+    resize: none;
+    color: white;
+    font-size: 1.8rem;
+    transition: background 0.3s;
+  }
+
+  .inpInput:focus {
+    background: rgba(76, 66, 66, 0.2);
+  }
+
+  .send {
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+  }
+
+  .warning {
+    color: #e0dccf;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+  } /* Hide scrollbar styles */
+}
